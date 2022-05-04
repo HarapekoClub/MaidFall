@@ -1,4 +1,4 @@
-public interface Buton
+public interface Button
 {
     void OnClick();
 }
