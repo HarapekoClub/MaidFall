@@ -6,9 +6,16 @@ using UnityEngine.EventSystems;
 
 public class CursorOff : MonoBehaviour
 {
+
+	/// <summary>
+	/// 初期に選択するボタン
+	/// </summary>
 	[SerializeField] private GameObject firstSelectButton;
-	// Start is called before the first frame update
-	void Start()
+
+	/// <summary>
+	/// アタッチされたオブジェクトがアクティブ化した際に、カーソルを選択状態にする
+	/// </summary>
+	private void OnEnable()
 	{
 		EventSystem ev = EventSystem.current;
 		ev.SetSelectedGameObject(firstSelectButton);
