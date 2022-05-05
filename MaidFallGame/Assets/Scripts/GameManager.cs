@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// ゲームマネージャー
+/// </summary>
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// インスタンス
+    /// </summary>
     private static GameManager instance;
+
     // Start is called before the first frame update
     void Start()
     {

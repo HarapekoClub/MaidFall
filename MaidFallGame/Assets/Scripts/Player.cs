@@ -1,17 +1,42 @@
 using UnityEngine;
 
+/// <summary>
+/// プレイヤークラス
+/// </summary>
 public class Player : MonoBehaviour
 {
+    /// <summary>
+    /// 体力が減る間隔
+    /// </summary>
     private const float INTERVAL = 5f;
+    /// <summary>
+    /// 移動距離
+    /// </summary>
     private const float MOVE_SPEED = 0.5f;
+    /// <summary>
+    /// 秒数カウント
+    /// </summary>
     private float sec;
+    /// <summary>
+    /// 移動方向
+    /// </summary>
     private float dir;
+    /// <summary>
+    /// 体力
+    /// </summary>
     private int hp;
-
+    /// <summary>
+    /// 位置情報
+    /// </summary>
     private Vector3 position;
-
+    /// <summary>
+    /// 写真 Unity Editorで設定
+    /// </summary>
     [SerializeField] Photo photo;
 
+    /// <summary>
+    /// 初期化
+    /// </summary>
     void Start()
     {
         this.sec = 0;
@@ -20,6 +45,9 @@ public class Player : MonoBehaviour
         this.position = this.gameObject.transform.position;
     }
 
+    /// <summary>
+    /// プレイ状態だったら移動したり体力減ったり
+    /// </summary>
     void Update()
     {
         if (!GamePlayManager.GetInstance().GetIsPlay())
@@ -40,7 +68,10 @@ public class Player : MonoBehaviour
             this.Move();
     }
 
-
+    /// <summary>
+    /// 移動
+    /// プレイ状態だったらdir方向に, MOVE_SPEED分だけ移動
+    /// </summary>
     private void Move()
     {
         if (!GamePlayManager.GetInstance().GetIsPlay())
@@ -66,6 +97,11 @@ public class Player : MonoBehaviour
         this.AddHP(-1);
     }
 
+    /// <summary>
+    /// 体力増減
+    /// 引数だけ体力を増減させて終了判定
+    /// </summary>
+    /// <param name="i">増減値</param>
     private void AddHP(int i)
     {
         this.hp += i;
@@ -76,9 +112,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ゲーム終了時の処理
+    /// </summary>
     public void GameFinish()
     {
-        // ゲーム終了時の処理
         Debug.Log("Finish");
     }
 

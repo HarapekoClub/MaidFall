@@ -1,15 +1,30 @@
 using UnityEngine;
 
+/// <summary>
+/// メイド生成機
+/// </summary>
 public class MaidGenerator : MonoBehaviour
 {
+    /// <summary>
+    /// 生成間隔
+    /// </summary>
     private float interval = 3.0f;
+    /// <summary>
+    /// 秒数カウント
+    /// </summary>
     private float sec;
 
+    /// <summary>
+    /// 初期化
+    /// </summary>
     void Start()
     {
         this.sec = 6;
     }
 
+    /// <summary>
+    /// プレイ中ならinterval秒ごとに生成
+    /// </summary>
     void Update()
     {
         if (!GamePlayManager.GetInstance().GetIsPlay())
@@ -24,6 +39,9 @@ public class MaidGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// メイドさん生成
+    /// </summary>
     private void Generate()
     {
         // Debug.Log("GENERATE");

@@ -1,3 +1,6 @@
+/// <summary>
+/// メイドさんのポーズ
+/// </summary>
 public enum MaidPause
 {
     HEART = 10,
