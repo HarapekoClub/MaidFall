@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     private float sec;
     private float dir;
     private int hp;
-    private bool isPlay;
 
     private Vector3 position;
 
@@ -18,7 +17,6 @@ public class Player : MonoBehaviour
         this.sec = 0;
         this.dir = 0;
         this.hp = 10;
-        this.isPlay = true;
         this.position = this.gameObject.transform.position;
     }
 
@@ -29,28 +27,21 @@ public class Player : MonoBehaviour
             this.dir = Input.GetAxis("Horizontal");
         if (this.sec > INTERVAL)
         {
-            if (!this.IsMovable())
-            {
-                this.GameFinish();
-            }
-
             this.sec = 0;
         }
 
-        if (this.IsMovable())
-        {
-            if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
-                this.Move();
-        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+            this.Move();
     }
 
-    private bool IsMovable()
-    {
-        return this.isPlay;
-    }
 
     private void Move()
     {
+        if (!GamePlayManager.GetInstance().GetIsPlay())
+        {
+            return;
+        }
         float move = 0f;
         if (dir == 0)
         {
@@ -76,7 +67,7 @@ public class Player : MonoBehaviour
         Debug.Log("HP : " + this.hp);
         if (hp <= 0)
         {
-            this.isPlay = false;
+            this.GameFinish();
         }
     }
 

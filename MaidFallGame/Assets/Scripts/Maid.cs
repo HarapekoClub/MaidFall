@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class Maid : Colider
 {
     private Vector3 position;
-    [SerializeField] private MaidType type;
+    private MaidType type;
 
     private float sec;
     private bool isFall;
@@ -18,6 +18,10 @@ public class Maid : Colider
     // Update is called once per frame
     void Update()
     {
+        if (!GamePlayManager.GetInstance().GetIsPlay())
+        {
+            return;
+        }
         sec += Time.deltaTime;
         if (this.sec > INTERVAL)
         {
@@ -31,6 +35,7 @@ public class Maid : Colider
             }
             sec = 0;
         }
+
     }
 
     protected override void Initialize()
@@ -66,7 +71,6 @@ public class Maid : Colider
 
     public void OnGround()
     {
-
         this.isFall = false;
         this.sec = 0;
     }
