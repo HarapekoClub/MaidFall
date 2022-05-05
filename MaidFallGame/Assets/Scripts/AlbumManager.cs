@@ -35,29 +35,29 @@ public class AlbumManager
         // アルバムの初期設定、全ての写真を非所持
         // 写真名は「メイド衣装_メイドポーズ_プレイヤーポーズ」
         this.album.Add("NORMAL_HEART_HEART", false);
-        this.album.Add("NORMAL_HEART_GOOD", false);
-        this.album.Add("NORMAL_GOOD_HEART", false);
-        this.album.Add("NORMAL_GOOD_GOOD", false);
+        // this.album.Add("NORMAL_HEART_GOOD", false);
+        // this.album.Add("NORMAL_GOOD_HEART", false);
+        // this.album.Add("NORMAL_GOOD_GOOD", false);
 
         this.album.Add("CHINA_HEART_HEART", false);
-        this.album.Add("CHINA_HEART_GOOD", false);
-        this.album.Add("CHINA_GOOD_HEART", false);
-        this.album.Add("CHINA_GOOD_GOOD", false);
+        // this.album.Add("CHINA_HEART_GOOD", false);
+        // this.album.Add("CHINA_GOOD_HEART", false);
+        // this.album.Add("CHINA_GOOD_GOOD", false);
 
         this.album.Add("SCHOOL_HEART_HEART", false);
-        this.album.Add("SCHOOL_HEART_GOOD", false);
-        this.album.Add("SCHOOL_GOOD_HEART", false);
-        this.album.Add("SCHOOL_GOOD_GOOD", false);
+        // this.album.Add("SCHOOL_HEART_GOOD", false);
+        // this.album.Add("SCHOOL_GOOD_HEART", false);
+        // this.album.Add("SCHOOL_GOOD_GOOD", false);
 
         this.album.Add("WATER_HEART_HEART", false);
-        this.album.Add("WATER_HEART_GOOD", false);
-        this.album.Add("WATER_GOOD_HEART", false);
-        this.album.Add("WATER_GOOD_GOOD", false);
+        // this.album.Add("WATER_HEART_GOOD", false);
+        // this.album.Add("WATER_GOOD_HEART", false);
+        // this.album.Add("WATER_GOOD_GOOD", false);
 
         this.album.Add("OTAKU_HEART_HEART", false);
-        this.album.Add("OTAKU_HEART_GOOD", false);
-        this.album.Add("OTAKU_GOOD_HEART", false);
-        this.album.Add("OTAKU_GOOD_GOOD", false);
+        // this.album.Add("OTAKU_HEART_GOOD", false);
+        // this.album.Add("OTAKU_GOOD_HEART", false);
+        // this.album.Add("OTAKU_GOOD_GOOD", false);
     }
 
     /// <summary>
