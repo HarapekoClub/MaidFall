@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// カーソル初期設定クラス
+/// </summary>
 public class CursorOff : MonoBehaviour
 {
-
 	/// <summary>
 	/// 初期に選択するボタン
 	/// </summary>
