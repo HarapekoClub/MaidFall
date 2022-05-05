@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private const float INTERVAL = 0.5f;
+    private const float INTERVAL = 5f;
     private const float MOVE_SPEED = 0.5f;
     private float sec;
     private float dir;
+    private int hp;
 
     private Vector3 position;
 
@@ -15,31 +16,37 @@ public class Player : MonoBehaviour
     {
         this.sec = 0;
         this.dir = 0;
+        this.hp = 10;
         this.position = this.gameObject.transform.position;
     }
 
     void Update()
     {
+        if (!GamePlayManager.GetInstance().GetIsPlay())
+        {
+            return;
+        }
         this.sec += Time.deltaTime;
-        this.dir = Input.GetAxis("Horizontal");
+        if (Input.GetAxis("Horizontal") != 0)
+            this.dir = Input.GetAxis("Horizontal");
         if (this.sec > INTERVAL)
         {
-            if (this.IsMovable())
-            {
-                this.Move();
-            }
-
+            this.AddHP(-1);
             this.sec = 0;
         }
+
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+            this.Move();
     }
 
-    private bool IsMovable()
-    {
-        return true;
-    }
 
     private void Move()
     {
+        if (!GamePlayManager.GetInstance().GetIsPlay())
+        {
+            return;
+        }
         float move = 0f;
         if (dir == 0)
         {
@@ -53,8 +60,26 @@ public class Player : MonoBehaviour
         {
             move = -MOVE_SPEED;
         }
+        this.dir = 0;
         this.position.x += move;
         this.gameObject.transform.position = this.position;
+        this.AddHP(-1);
+    }
+
+    private void AddHP(int i)
+    {
+        this.hp += i;
+        Debug.Log("HP : " + this.hp);
+        if (hp <= 0)
+        {
+            GamePlayManager.GetInstance().GameFinish();
+        }
+    }
+
+    public void GameFinish()
+    {
+        // ゲーム終了時の処理
+        Debug.Log("Finish");
     }
 
     /// <summary>
@@ -63,6 +88,7 @@ public class Player : MonoBehaviour
     /// <param name="maid"></param>
     public void Shot(Maid maid)
     {
+        this.AddHP(((int)maid.GetMaidType()));
         string photoName = "";
         this.photo.Shot(photoName);
         AlbumManager.GetInstance().SetIsShot(photoName, true);

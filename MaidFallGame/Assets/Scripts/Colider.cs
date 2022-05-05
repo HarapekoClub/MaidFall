@@ -18,7 +18,7 @@ public class Colider : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         switch (collision.gameObject.tag)
         {
