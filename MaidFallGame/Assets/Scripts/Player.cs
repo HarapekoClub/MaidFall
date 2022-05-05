@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
     private const float MOVE_SPEED = 0.5f;
     private float sec;
     private float dir;
+    private int hp;
+    private bool isPlay;
 
     private Vector3 position;
 
@@ -15,6 +17,8 @@ public class Player : MonoBehaviour
     {
         this.sec = 0;
         this.dir = 0;
+        this.hp = 10;
+        this.isPlay = true;
         this.position = this.gameObject.transform.position;
     }
 
@@ -25,9 +29,9 @@ public class Player : MonoBehaviour
             this.dir = Input.GetAxis("Horizontal");
         if (this.sec > INTERVAL)
         {
-            if (this.IsMovable())
+            if (!this.IsMovable())
             {
-                // this.Move();
+                this.GameFinish();
             }
 
             this.sec = 0;
@@ -42,7 +46,7 @@ public class Player : MonoBehaviour
 
     private bool IsMovable()
     {
-        return true;
+        return this.isPlay;
     }
 
     private void Move()
@@ -63,6 +67,23 @@ public class Player : MonoBehaviour
         this.dir = 0;
         this.position.x += move;
         this.gameObject.transform.position = this.position;
+        this.AddHP(-1);
+    }
+
+    private void AddHP(int i)
+    {
+        this.hp += i;
+        Debug.Log("HP : " + this.hp);
+        if (hp <= 0)
+        {
+            this.isPlay = false;
+        }
+    }
+
+    public void GameFinish()
+    {
+        // ゲーム終了時の処理
+        Debug.Log("Finish");
     }
 
     /// <summary>
@@ -71,6 +92,7 @@ public class Player : MonoBehaviour
     /// <param name="maid"></param>
     public void Shot(Maid maid)
     {
+        this.AddHP(((int)maid.GetMaidType()));
         string photoName = "";
         this.photo.Shot(photoName);
         AlbumManager.GetInstance().SetIsShot(photoName, true);
