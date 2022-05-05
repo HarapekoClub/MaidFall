@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private const float INTERVAL = 0.5f;
+    private const float INTERVAL = 5f;
     private const float MOVE_SPEED = 0.5f;
     private float sec;
     private float dir;
@@ -22,11 +22,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!GamePlayManager.GetInstance().GetIsPlay())
+        {
+            return;
+        }
         this.sec += Time.deltaTime;
         if (Input.GetAxis("Horizontal") != 0)
             this.dir = Input.GetAxis("Horizontal");
         if (this.sec > INTERVAL)
         {
+            this.AddHP(-1);
             this.sec = 0;
         }
 
@@ -67,7 +72,7 @@ public class Player : MonoBehaviour
         Debug.Log("HP : " + this.hp);
         if (hp <= 0)
         {
-            this.GameFinish();
+            GamePlayManager.GetInstance().GameFinish();
         }
     }
 
