@@ -9,11 +9,17 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class CursorOff : MonoBehaviour
 {
-    [SerializeField] private GameObject firstSelectButton;
-    // Start is called before the first frame update
-    void Start()
-    {
-        EventSystem ev = EventSystem.current;
-        ev.SetSelectedGameObject(firstSelectButton);
-    }
+	/// <summary>
+	/// 初期に選択するボタン
+	/// </summary>
+	[SerializeField] private GameObject firstSelectButton;
+
+	/// <summary>
+	/// アタッチされたオブジェクトがアクティブ化した際に、カーソルを選択状態にする
+	/// </summary>
+	private void OnEnable()
+	{
+		EventSystem ev = EventSystem.current;
+		ev.SetSelectedGameObject(firstSelectButton);
+	}
 }
