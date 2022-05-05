@@ -21,15 +21,22 @@ public class Player : MonoBehaviour
     void Update()
     {
         this.sec += Time.deltaTime;
-        this.dir = Input.GetAxis("Horizontal");
+        if (Input.GetAxis("Horizontal") != 0)
+            this.dir = Input.GetAxis("Horizontal");
         if (this.sec > INTERVAL)
         {
             if (this.IsMovable())
             {
-                this.Move();
+                // this.Move();
             }
 
             this.sec = 0;
+        }
+
+        if (this.IsMovable())
+        {
+            if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+                this.Move();
         }
     }
 
@@ -53,6 +60,7 @@ public class Player : MonoBehaviour
         {
             move = -MOVE_SPEED;
         }
+        this.dir = 0;
         this.position.x += move;
         this.gameObject.transform.position = this.position;
     }

@@ -21,6 +21,10 @@ public class Photo : MonoBehaviour
         {
             this.image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
         }
+        else
+        {
+            this.sec += Time.deltaTime;
+        }
     }
 
     public void Shot(string name)
