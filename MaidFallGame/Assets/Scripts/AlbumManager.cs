@@ -7,10 +7,20 @@ using System.Collections.Generic;
 /// </summary>
 public class AlbumManager
 {
+    /// <summary>
+    /// インスタンス
+    /// </summary>
     private static AlbumManager instance;
-
+    /// <summary>
+    /// 写真の所持状況
+    /// Key string 写真名
+    /// Value bool 所持済みか否か
+    /// </summary>
     private Dictionary<string, bool> album;
 
+    /// <summary>
+    /// コンストラクタ
+    /// </summary>
     private AlbumManager()
     {
         this.album = new Dictionary<string, bool>();
@@ -30,6 +40,9 @@ public class AlbumManager
         return instance;
     }
 
+    /// <summary>
+    /// アルバムの初期化
+    /// </summary>
     private void SetAlbum()
     {
         // アルバムの初期設定、全ての写真を非所持

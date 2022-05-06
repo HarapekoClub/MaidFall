@@ -1,3 +1,6 @@
+/// <summary>
+/// メイドさんの種類
+/// </summary>
 public enum MaidType
 {
     NORMAL = 10,
