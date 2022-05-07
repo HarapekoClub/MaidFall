@@ -22,4 +22,13 @@ public class CursorOff : MonoBehaviour
 		EventSystem ev = EventSystem.current;
 		ev.SetSelectedGameObject(firstSelectButton);
 	}
+
+	private void Update()
+	{
+		if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.UpArrow)
+		|| Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
+		{
+			GameManager.GetInstance().PlaySE(0);
+		}
+	}
 }
