@@ -76,6 +76,13 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("シーン" + sceneName + "に移動します");
         SceneManager.LoadScene(sceneName);
+        if (!this.bgm.isPlaying)
+        {
+            this.bgm.clip = this.bgmData[0];
+            this.bgm.loop = false;
+            this.bgm.time = 0;
+            this.bgm.Play();
+        }
         DontDestroyOnLoad(instance);
     }
 
@@ -87,6 +94,13 @@ public class GameManager : MonoBehaviour
         }
         //this.se.clip = this.seData[i];
         this.se.PlayOneShot(this.seData[i]);
+    }
+
+    public void GameFinish()
+    {
+        this.bgm.Stop();
+
+        this.se.PlayOneShot(this.seData[2]);
     }
 
 }

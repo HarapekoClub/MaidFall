@@ -111,7 +111,7 @@ public class GamePlayManager
         this.isPlay = false;
         //GameObject.FindGameObjectWithTag("Play").SetActive(false);
         this.result.gameObject.SetActive(true);
-
+        GameManager.GetInstance().GameFinish();
         this.result.GameFinish(this.newPhotos, this.photoCount);
     }
 }
