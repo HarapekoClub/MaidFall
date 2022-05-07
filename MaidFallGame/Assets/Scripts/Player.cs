@@ -145,7 +145,7 @@ public class Player : MonoBehaviour
     /// <param name="maid"></param>
     public void Shot(Maid maid)
     {
-        this.AddHP(((int)maid.GetMaidType()));
+
         string photoName = maid.GetMaidType() + "_HEART_HEART";
         this.photo.Shot(photoName);
 
@@ -153,6 +153,7 @@ public class Player : MonoBehaviour
 
         AlbumManager.GetInstance().SetIsShot(photoName, true);
         GameManager.GetInstance().PlaySE(1);
+        this.AddHP(((int)maid.GetMaidType()));
     }
 
 }

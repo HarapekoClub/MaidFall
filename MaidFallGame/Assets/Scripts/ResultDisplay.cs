@@ -67,8 +67,8 @@ public class ResultDisplay : MonoBehaviour
         float posx = pos.x;
         foreach (string name in newPhotos)
         {
-            wh.x += 100;
-            pos.x = pos.x + 1.0f;
+            wh.x += 75;
+            pos.x = pos.x + 0.75f;
             img = Instantiate(Resources.Load<GameObject>("Prefabs/ResultPhoto")).GetComponent<Image>();
             img.gameObject.transform.SetParent(this.photoFrame.transform);
             img.gameObject.transform.localScale = new Vector3(1, 1, 1);

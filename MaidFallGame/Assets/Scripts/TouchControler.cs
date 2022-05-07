@@ -1,11 +1,20 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class TouchControler : MonoBehaviour, IPointerDownHandler
+public class TouchControler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private TouchButton touchButton;
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Image img = this.gameObject.GetComponent<Image>();
+        img.color = new Color(img.color.r, img.color.g, img.color.b, 0);
+    }
     public void OnPointerDown(PointerEventData eventData)
     {
+        Image img = this.gameObject.GetComponent<Image>();
+        img.color = new Color(img.color.r, img.color.g, img.color.b, 0.2f);
         switch (touchButton)
         {
             case TouchButton.ARROW_TOP:
