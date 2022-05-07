@@ -236,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0025091, y: -84.5}
+  m_AnchoredPosition: {x: 0.0025091171, y: -84.5}
   m_SizeDelta: {x: 79.995, y: 69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &227780161
@@ -830,7 +830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0007353425, y: -154.79002}
+  m_AnchoredPosition: {x: 6.4028e-10, y: -164.61}
   m_SizeDelta: {x: 465.85, y: 34.675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &739394763
@@ -1236,8 +1236,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: -52.5}
-  m_SizeDelta: {x: 80, y: 10}
+  m_AnchoredPosition: {x: 29.97, y: -60.11}
+  m_SizeDelta: {x: 10.05, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1051343505
 BoxCollider2D:
@@ -1902,8 +1902,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -184.60999, y: -92.27501}
-  m_SizeDelta: {x: 80, y: 100}
+  m_AnchoredPosition: {x: -188.5, y: -92.272}
+  m_SizeDelta: {x: 50, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710598837
 MonoBehaviour:
@@ -1925,7 +1925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 00557fabd83bebd4fbd15ad59a41eea2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63a0829290224cb498f10b3b7f73015c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
