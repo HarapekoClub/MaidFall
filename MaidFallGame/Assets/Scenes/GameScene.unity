@@ -660,8 +660,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 166, y: 147.02}
-  m_SizeDelta: {x: 116.09, y: 39.23}
+  m_AnchoredPosition: {x: 166, y: 136.82}
+  m_SizeDelta: {x: 116.09, y: 59.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &729844397
 MonoBehaviour:
@@ -1114,7 +1114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1055752083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1833,7 +1833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SCORE
+  m_text: RESULT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 842d9930201cf1846aeaa5d930464fb0, type: 2}
   m_sharedMaterial: {fileID: 2562579333445207563, guid: 842d9930201cf1846aeaa5d930464fb0, type: 2}

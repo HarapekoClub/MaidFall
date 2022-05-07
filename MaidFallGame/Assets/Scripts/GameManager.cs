@@ -100,7 +100,6 @@ public class GameManager : MonoBehaviour
     {
         this.bgm.Stop();
 
-        this.se.PlayOneShot(this.seData[2]);
     }
 
 }

@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     {
         this.sec = 0;
         this.dir = 0;
-        this.hp = 10;
+        this.hp = 30;
         this.position = this.gameObject.transform.position;
         this.hpText.text = "HP : " + this.hp;
         GamePlayManager.GetInstance().GameStart();
@@ -111,9 +111,15 @@ public class Player : MonoBehaviour
     {
         this.hp += i;
         Debug.Log("HP : " + this.hp);
-        this.hpText.text = "HP : " + this.hp;
+        this.hpText.text = "SATISFACTION \n" + this.hp;
         if (hp <= 0)
         {
+            GameManager.GetInstance().PlaySE(3);
+            GamePlayManager.GetInstance().GameFinish();
+        }
+        else if (hp >= 100)
+        {
+            GameManager.GetInstance().PlaySE(2);
             GamePlayManager.GetInstance().GameFinish();
         }
     }
