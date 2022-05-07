@@ -19,6 +19,14 @@ public class ResultDisplay : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameManager.GetInstance().JumpScene("HomeScene");
+        }
+    }
+
     public void GameFinish(List<string> newPhotos, Dictionary<string, int> photoCount)
     {
         EventSystem.current.SetSelectedGameObject(toHome);

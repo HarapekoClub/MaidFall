@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
         this.hp = 30;
         this.position = this.gameObject.transform.position;
         this.hpText.text = "HP : " + this.hp;
+        GamePlayManager.GetInstance().SetPlayer(this);
         GamePlayManager.GetInstance().GameStart();
     }
 
@@ -70,6 +71,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
             this.Move();
+    }
+
+    public void Move(int i)
+    {
+        this.dir = i;
+        this.Move();
     }
 
     /// <summary>
