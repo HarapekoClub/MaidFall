@@ -53,6 +53,7 @@ public class Photo : MonoBehaviour
     /// <param name="name">写真名</param>
     public void Shot(string name)
     {
+        Debug.Log(PATH + name);
         this.sec = 0;
         this.image.sprite = Resources.Load<Sprite>(PATH + name);
         this.image.color = new Color(image.color.r, image.color.g, image.color.b, 1);
