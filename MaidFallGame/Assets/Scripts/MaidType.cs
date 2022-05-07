@@ -7,5 +7,5 @@ public enum MaidType
     CHINA = 11,
     SCHOOL = 9,
     WATER = 50,
-    OTAKU = -1
+    OTAKU = -10
 }

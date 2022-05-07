@@ -46,11 +46,11 @@ public class MaidGenerator : MonoBehaviour
     {
         // Debug.Log("GENERATE");
         Maid maid = Instantiate(Resources.Load<GameObject>("Prefabs/Maid")).GetComponent<Maid>();
-        maid.gameObject.transform.parent = this.gameObject.transform;
+        maid.gameObject.transform.SetParent(this.gameObject.transform);
 
         // 本当は乱数で決定
         System.Random random = new System.Random();
-        float x = random.Next() % 11 - 5;
+        float x = random.Next() % 8 - 4;
         Vector3 pos = new Vector3(x, 3, 0);
 
         MaidType type = MaidType.NORMAL;
@@ -69,7 +69,7 @@ public class MaidGenerator : MonoBehaviour
                 type = MaidType.WATER;
                 break;
             case 4:
-                // type = MaidType.OTAKU;
+                type = MaidType.OTAKU;
                 break;
         }
 
