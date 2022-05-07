@@ -108,6 +108,8 @@ public class Maid : Colider
     {
         this.isFall = false;
         this.sec = 0;
+        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        this.gameObject.GetComponent<Rigidbody2D>().simulated = false;
     }
 
     /// <summary>

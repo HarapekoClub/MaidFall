@@ -8,6 +8,7 @@ TagManager:
   - Maid
   - Ground
   - Button
+  - Result
   layers:
   - Default
   - TransparentFX

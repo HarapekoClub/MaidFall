@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// プレイヤークラス
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
     /// 写真 Unity Editorで設定
     /// </summary>
     [SerializeField] Photo photo;
+    [SerializeField] TextMeshProUGUI hpText;
 
     /// <summary>
     /// 初期化
@@ -43,6 +45,8 @@ public class Player : MonoBehaviour
         this.dir = 0;
         this.hp = 10;
         this.position = this.gameObject.transform.position;
+        this.hpText.text = "HP : " + this.hp;
+        GamePlayManager.GetInstance().GameStart();
     }
 
     /// <summary>
@@ -95,6 +99,7 @@ public class Player : MonoBehaviour
         this.position.x += move;
         this.gameObject.transform.position = this.position;
         this.AddHP(-1);
+        GameManager.GetInstance().PlaySE(0);
     }
 
     /// <summary>
@@ -106,6 +111,7 @@ public class Player : MonoBehaviour
     {
         this.hp += i;
         Debug.Log("HP : " + this.hp);
+        this.hpText.text = "HP : " + this.hp;
         if (hp <= 0)
         {
             GamePlayManager.GetInstance().GameFinish();
@@ -127,9 +133,13 @@ public class Player : MonoBehaviour
     public void Shot(Maid maid)
     {
         this.AddHP(((int)maid.GetMaidType()));
-        string photoName = "";
+        string photoName = maid.GetMaidType() + "_HEART_HEART";
         this.photo.Shot(photoName);
+
+        GamePlayManager.GetInstance().AddPhoto(photoName);
+
         AlbumManager.GetInstance().SetIsShot(photoName, true);
+        GameManager.GetInstance().PlaySE(1);
     }
 
 }
