@@ -6,6 +6,10 @@ public class TouchControler : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 {
     [SerializeField] private TouchButton touchButton;
 
+    public TouchButton GetTouchButton()
+    {
+        return this.touchButton;
+    }
     public void OnPointerUp(PointerEventData eventData)
     {
         Image img = this.gameObject.GetComponent<Image>();
