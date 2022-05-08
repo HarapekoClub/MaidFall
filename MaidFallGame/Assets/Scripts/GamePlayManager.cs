@@ -10,6 +10,7 @@ public class GamePlayManager
     /// インスタンス
     /// </summary>
     private static GamePlayManager instance;
+    private Player player;
 
     private ResultDisplay result;
 
@@ -54,6 +55,16 @@ public class GamePlayManager
     public void SetResult(ResultDisplay result)
     {
         this.result = result;
+    }
+
+    public void SetPlayer(Player player)
+    {
+        this.player = player;
+    }
+
+    public Player GetPlayer()
+    {
+        return this.player;
     }
 
 
